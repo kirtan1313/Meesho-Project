@@ -58,16 +58,23 @@ function Catalog() {
         <form onSubmit={handleSubmit}>
           <div class="form-group">
             <label for="image">Upload Image</label>
-            <input type="file" id="image" name="image" accept="image/*" onChange={handleImages}  required />
+            <input type="file" id="image" name="image" accept="image/*" onChange={handleImages} required />
           </div>
           <div class="form-group">
             <label for="productName">Product Name</label>
             <input type="text" id="productName" name="productName" onChange={handleChange} value={addProducts.productName} required />
+            
           </div>
-          <div class="form-group">
+
+          <select name='category' onChange={handleChange} value={addProducts.category}>
+              <option value="">Select Category</option>
+              <option value="women">women</option>
+              <option value="men">men</option>
+            </select>
+          {/* <div class="form-group">
             <label for="category">Category</label>
             <input type="text" id="category" name="category" onChange={handleChange} value={addProducts.category} required />
-          </div>
+          </div> */}
           <div class="form-group">
             <label for="price">Price</label>
             <input type="text" id="price" name="price" min="0" onChange={handleChange} value={addProducts.price} required />
@@ -76,6 +83,7 @@ function Catalog() {
             <label for="quantity">Quantity</label>
             <input type="number" id="quantity" name="quantity" min="1" onChange={handleChange} value={addProducts.quantity} required />
           </div>
+
           <div class="form-group mt-5">
             <button type="submit">Add Product</button>
           </div>

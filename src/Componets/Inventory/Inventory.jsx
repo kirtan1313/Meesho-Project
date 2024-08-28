@@ -27,7 +27,7 @@ function Inventory() {
 
   return (
     <div id="main" className='pt-3'>
-      <div className='d-flex'>
+      <div className='d-flex flex-wrap gap-2'>
         {
           allproducts.map((pro) => {
             return (
